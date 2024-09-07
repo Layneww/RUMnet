@@ -17,7 +17,7 @@ import time
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-from .synthetic.data_preparation import prediction, compute_loss
+# from .synthetic.data_preparation import prediction, compute_loss
 from .models import *
 
 def scce_with_ls(y, y_hat):
