@@ -30,7 +30,7 @@ if __name__ == '__main__':
     #### Choose data set in {swiss_metro, expedia}
     testname = "swiss_metro"
     #### Choose model in {MNL, Tastenet, DeepMNL, mixDeepMNL, RUMnet, NN, RF}
-    modelFamily = "RUMnet"
+    modelFamily = "mixDeepMNL"
     
     ##### Parameters common to all experiments
     with open("src/"+testname+"/config_general.json") as json_data_file:
