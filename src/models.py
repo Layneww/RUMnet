@@ -137,15 +137,16 @@ class mixDeepMNL(tf.keras.Model):
     for j in range(self.paramsArchitecture['number_mixture']):
             
       U =  [tf.keras.layers.Concatenate()((X[i],)+ Z) for i in range(n)]             
-        
+
+      
       if self.paramsArchitecture['depth']>0:
             
         for k in range(self.paramsArchitecture['depth']):
           U = [self.dense[j][k](U[i]) for i in range(n)]
-        U = [self.last[j](U[i]) for i in range(n)]             
-        combined = tf.keras.layers.Concatenate()(U)
-        combined = (1-tol)*tf.keras.layers.Activation(activation=tf.nn.softmax)(combined) + tol*tf.ones_like(combined)/n
-        y.append(combined)
+      U = [self.last[j](U[i]) for i in range(n)]             
+      combined = tf.keras.layers.Concatenate()(U)
+      combined = (1-tol)*tf.keras.layers.Activation(activation=tf.nn.softmax)(combined) + tol*tf.ones_like(combined)/n
+      y.append(combined)
 
     if (self.paramsArchitecture['number_mixture'] > 1):
         return tf.keras.layers.Average()(y)
