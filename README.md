@@ -28,11 +28,18 @@ The code was tested with the following:
 - pandas 1.4.2
 - tensorflow 2.4.0 (tf-nightly)
 - joblib 0.17.0
+- scikit-learn
+- matplotlib
 
 The full environment dependencies are provided in `/env/rumnet_env.yml`.
 
 ## Data
 To run the code, the datasets should be copied into a new subfolder `data/testname` and loaded in the data_preparation function (see above). The Swissmetro dataset is available [here](https://transp-or.epfl.ch/pythonbiogeme/examples_swissmetro.html) and the Expedia dataset is available [here](https://www.dropbox.com/sh/3at79kbztjittvk/AACykfcWhewRqiErmDjrp5Nxa?dl=0).
+```
+$ mkdir -p RUMnet/data/Swissmetro
+$ wget http://transp-or.epfl.ch/data/swissmetro.dat -P RUMnet/data/Swissmetro/
+```
+
 
 ## License
 This project is licensed under the terms of the [MIT License](LICENSE).
